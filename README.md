@@ -22,4 +22,4 @@
 5. 等待程序运行完成，查看运行结果： `result/mailboxes.csv`。
 
 ## TODO
-使用 Github Action 定时更新地址列表
+使用 Github Action 定时更新地址列表。
