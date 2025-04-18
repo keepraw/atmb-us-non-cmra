@@ -58,7 +58,8 @@
 
 3. 启用 GitHub Actions：
    - 进入仓库的 "Actions" 标签页
-   - 点击 "I understand my workflows, go ahead and enable them"
+   - 如果看到 "Actions are disabled" 的提示，点击 "I understand my workflows, go ahead and enable them" 按钮
+   - 如果没有看到此提示，说明 Actions 已经启用，可以跳过此步骤
 
 4. 手动触发工作流（可选）：
    - 在 "Actions" 标签页中，选择 "Update Mailbox List" 工作流
