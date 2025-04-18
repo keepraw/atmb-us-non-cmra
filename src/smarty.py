@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-from typing import Dict, Optional, List
+from typing import Dict, Optional, List, Tuple
 from dataclasses import dataclass
 from .utils import load_smarty_credentials
 
@@ -20,7 +20,7 @@ class SmartyClient:
         self.current_credential_index = 0
         self.credential_keys = list(self.credentials.keys())
     
-    def _get_next_credentials(self) -> tuple[str, str]:
+    def _get_next_credentials(self) -> Tuple[str, str]:
         """轮询获取下一个可用的 API 凭证"""
         api_id = self.credential_keys[self.current_credential_index]
         api_token = self.credentials[api_id]
@@ -76,7 +76,7 @@ class SmartyClientPool:
         """并发验证多个地址"""
         tasks = []
         for address in addresses:
-            client = this.get_client()
+            client = self.get_client()
             tasks.append(client.verify_address(address))
         
         results = await asyncio.gather(*tasks)
